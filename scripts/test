@@ -1,0 +1,2 @@
+string = '88.198.56.239 - - [26/Apr/2015:08:05:09 +0200] "GET a.html HTTP/1.1" 200'
+line = string.replace('-','').replace('[','').replace(']','').replace('   ',' ').split(" ")
