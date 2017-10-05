@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/aventura/Escritorio/repos/big-data/spark/count_words.py", line 8, in <module>
+    print('____________LOADING DATA___________', char_count)
+NameError: name 'char_count' is not defined
