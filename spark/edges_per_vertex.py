@@ -17,7 +17,7 @@ edges = edges.distinct()
 if not self_loops:
 	edges = edges.filter(lambda x: x[0] != x[1])
 edges = edges.flatMap(lambda x: x).map(lambda x: (x,1))
-edges = edges.reduceByKey(lambda x, y: x+y)
+edges = edges.reduceByKey(lambda x, y: x + y)
 print(' ___________________________________ ')
 print('|                                   |')
 print('|              RESULTS              |')
