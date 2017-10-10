@@ -12,6 +12,7 @@ sc = SparkContext()
 sc.setLogLevel("ERROR")
 
 edges = sc.textFile(sys.argv[1])
+edges = edges.map(lambda x: x.replace('"', ''))
 edges = edges.map(lambda x: splitToOrderedTuple(x, ','))
 edges = edges.distinct() 
 if not self_loops:
@@ -56,6 +57,6 @@ def reducePairs(x,y):
 
 
 res = res.reduceByKey(lambda x, y: reducePairs(x, y))
-res = res.map(lambda x: (x[0][0], x[0][1], x[1][0], x[1][1]))
+res = res.map(lambda x: (str(x[0][0]), str(x[0][1]), str(x[1][0]), str(x[1][1])))
 
 print(res.collect())
